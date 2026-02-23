@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">Job Application Tracker</h1>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+      <div class="dash-card">
+        <p>Total</p>
+        <h2 id="totalCount">0</h2>
+      </div>
+      <div class="dash-card">
+        <p>Interview</p>
+        <h2 id="interviewCount" class="green">0</h2>
+      </div>
+      <div class="dash-card">
+        <p>Rejected</p>
+        <h2 id="rejectedCount" class="red">0</h2>
+      </div>
+    </div>
+
+    <!-- Available Jobs -->
+    <div class="jobs-section">
+      <div class="jobs-header">
+        <h2>Available Jobs</h2>
+        <span id="jobCountText">0 jobs</span>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="all">All</button>
+        <button class="tab" data-tab="interview">Interview</button>
+        <button class="tab" data-tab="rejected">Rejected</button>
+      </div>
+
+      <!-- Job Cards -->
+      <div id="jobsContainer" class="jobs-container"></div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty hidden">
+        <img src="assest/jobs.png" alt="no jobs" />
+        <h3>No jobs available</h3>
+        <p>Check back soon for new job opportunities</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
