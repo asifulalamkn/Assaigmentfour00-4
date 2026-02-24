@@ -177,3 +177,42 @@ function showJobs() {
   updateDashboard();
 }
 
+// btn action
+jobsContainer.addEventListener("click", function (e) {
+  let id = parseInt(e.target.dataset.id);
+
+  // interview
+  if (e.target.classList.contains("btn-interview")) {
+    for (let i = 0; i < jobList.length; i++) {
+      if (jobList[i].id === id) {
+        jobList[i].status = "interview";
+      }
+    }
+    showJobs();
+  }
+
+  // rejected 
+  if (e.target.classList.contains("btn-rejected")) {
+    for (let i = 0; i < jobList.length; i++) {
+      if (jobList[i].id === id) {
+        jobList[i].status = "rejected";
+      }
+    }
+    showJobs();
+  }
+
+  // delete
+  if (e.target.classList.contains("delete-btn")) {
+    let newList = [];
+    for (let i = 0; i < jobList.length; i++) {
+      if (jobList[i].id !== id) {
+        newList.push(jobList[i]);
+      }
+    }
+    jobList = newList;
+    showJobs();
+  }
+});
+
+// first load
+showJobs();
