@@ -192,9 +192,4 @@ body {
   display: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .dashboard {
-    grid-template-columns: 1fr;
-  }
-}
+git add .
